@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financial Dashboard"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/btnTax"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Income Tax Calculator"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnEMI"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="EMI Calculator"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#888888"
+        android:text="Logout" />
+
+    <Button
+        android:id="@+id/btnViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="View History"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FF9800"/>
+
+</LinearLayout>

@@ -1,8 +1,8 @@
 package com.example.incometaxcalculator;
 
-
-
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,12 +40,21 @@ public class MainActivity extends AppCompatActivity {
                 if(user.equals("") || pass.equals("")) {
                     Toast.makeText(MainActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    // This is the part that checks the database!
                     boolean isUserValid = db.checkUser(user, pass);
 
                     if(isUserValid) {
+                        // --- NEW: SESSION MANAGEMENT ---
+                        // We save the username so the Tax/EMI screens know who is calculating
+                        SharedPreferences sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("username", user);
+                        editor.apply();
+
                         Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        // Dashboard logic will go here next
+
+                        Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                        startActivity(intent);
+                        finish();
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

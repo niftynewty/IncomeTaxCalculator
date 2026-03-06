@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IncomeTaxCalculator">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TaxCalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
